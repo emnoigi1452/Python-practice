@@ -4,6 +4,7 @@ if not userInput.isnumeric():
     print("Number amount has to be a valid integer!")
     exit(-1)
 else:
+    print("Input your numbers (Press enter to proceed to next number): ")
     for i in range(0, int(userInput)):
         inputNum = input("")
         if not inputNum.isnumeric():
