@@ -21,10 +21,14 @@ def plist(start, end):
 s = input("Get start value: ")
 if not s.isnumeric():
     print("Value has to be numeric")
+else:
+    pass
 
 e = input("Get end value: ")
 if not e.isnumeric():
     print("Value has to be numeric!")
+else:
+    pass
 
 getcount = 0
 
