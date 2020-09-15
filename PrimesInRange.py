@@ -30,7 +30,7 @@ getcount = 0
 
 displayList = plist(int(s), int(e))
 for k in displayList:
-    if k is not displayList[len(displayList) - 1]:
+    if k is not displayList[-1]:
         if getcount % 10 == 0 and getcount != 0:
             print(k, end=", \n")
             getcount += 1
