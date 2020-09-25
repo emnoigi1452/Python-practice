@@ -1,5 +1,5 @@
 def secondLargest(ar):
-    if +len(ar) == 0:
+    if len(ar) == 0:
         l = 0
         l2 = 0
         pass
