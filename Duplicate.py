@@ -10,6 +10,7 @@ def duplicateRemover(array, dupeVal):
         array.remove(dupeVal)
     pass
 
+
 # Tạo một function để tìm ra số bị lặp
 # Áp dụng function đã tạo ở trên
 def duplicateHandler(array):
