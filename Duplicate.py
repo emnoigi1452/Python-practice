@@ -45,19 +45,19 @@ if not reader.isnumeric():
 else:
     print("Input array elements:")
     for i in range(0, int(reader) + 1):
-        k = input("")
-        if not k.isnumeric():
+        r = input("")
+        if not r.isnumeric():
             print("Invalid value, input is not an integer, skipping...")
             exceptionCount += 1
             pass
         else:
-            if int(k) > int(reader) or int(k) <= 0:
+            if int(r) > int(reader) or int(r) <= 0:
                 print("You can only input integers within the range from 1 - " + str(reader))
                 print("Skipping value...")
                 exceptionCount += 1
                 pass
             else:
-                ar.append(int(k))
+                ar.append(int(r))
     print("Confirm array. Containing " + str(len(ar)) + " elements, skipping " +
           str(exceptionCount) + " invalid values")
 print("Given array: " + str(ar))
