@@ -1,7 +1,7 @@
 # Viết 1 chương trình cho phép nhập vào số n (n >= 0)
 # Tạo một dãy số [array] với độ dài n+1 (với các số trong dãy nhập bởi người dùng)
 # In ra màn hình tất cả các số bị lặp trong dãy
-# Ghi chú : Các số nhập bởi người dùng là x (với điều kiện 1 <= x <= n
+# Ghi chú : Các số nhập bởi người dùng là x (với điều kiện 1 <= x <= n)
 
 # Tạo một function để xử lý các số bị lặp, xóa số đó khi bị phát hiện trong dãy
 # array - Tên dãy số [array] ; dupeVal - giá trị bị lặp
