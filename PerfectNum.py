@@ -9,16 +9,20 @@ def divList(num):
 
 
 def perfectCheck(num):
-    s = 0
-    lc = divList(num)
-    for j in lc:
-        s += j
-    if s == num:
-        print("Number is perfect!")
-        pass
-    else:
+    if num < 6:
         print("Number is not perfect!")
         pass
+    else:
+        s = 0
+        lc = divList(num)
+        for j in lc:
+            s += j
+        if s == num:
+            print("Number is perfect!")
+            pass
+        else:
+            print("Number is not perfect!")
+            pass
 
 
 n = input("Enter number: ")
