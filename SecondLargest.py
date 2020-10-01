@@ -1,10 +1,11 @@
+  
 def secondLargest(ar):
     if len(ar) == 0:
         l = 0
         l2 = 0
         pass
     elif len(ar) == 1:
-      return ar[0]
+      pass
     else:
         l = 0
         l2 = 0
