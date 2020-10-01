@@ -1,65 +1,56 @@
-# Viết 1 chương trình cho phép nhập vào số n (n >= 0)
-# Tạo một dãy số [array] với độ dài n+1 (với các số trong dãy nhập bởi người dùng)
-# In ra màn hình tất cả các số bị lặp trong dãy
-# Ghi chú : Các số nhập bởi người dùng là x (với điều kiện 1 <= x <= n)
-
-# Tạo một function để xử lý các số bị lặp, xóa số đó khi bị phát hiện trong dãy
-# array - Tên dãy số [array] ; dupeVal - giá trị bị lặp
-def duplicateRemover(array, dupeVal):
-    for x in range(0, array.count(dupeVal)):
-        array.remove(dupeVal)
-    pass
+def checkDupe(num, array):
+    b = False
+    for k in array:
+        if k == num:
+            b = True
+            break
+        else:
+            pass
+    return b
 
 
-# Tạo một function để tìm ra số bị lặp
-# Áp dụng function đã tạo ở trên
-def duplicateHandler(array):
-    duplicate = []
-    if len(array) == 0:
-        print("Array is empty!")  # Xử lý khi dãy số trống không
-        pass
-    elif len(array) == 1:
-        print("Array only has one element, that is " + str(array[0]))  # Xử lý khi dãy số chỉ có một giá trị
-        pass
-    else:
-        for j in range(0, len(array)):
-            for k in range(j + 1, len(array)):
-                if array[j] == array[k]:
-                    print(str(array[j]) + " is the duplicate value!")  # Báo cho hệ thống
-                    duplicate.append(array[j])
-                    duplicateRemover(array, array[j])
+def findDuplicate(array):
+    listD = []
+    for j in range(0, len(array)):
+        if not checkDupe(array[j], listD):
+            for z in range(j + 1, len(array)):
+                if array[j] == array[z]:
+                    listD.append(array[j])
                     break
                 else:
                     pass
-    if len(duplicate) == 0:
-        print("No duplicate values found within the given array!")
-        pass
-
-
-ar = []
-exceptionCount = 0
-reader = input("Input array length: ")  # Nhập độ dài
-if not reader.isnumeric():
-    print("Array length has to be numeric!")
-    exit(-1)
-else:
-    print("Input array elements:")
-    for i in range(0, int(reader) + 1):
-        r = input("")
-        if not r.isnumeric():
-            print("Invalid value, input is not an integer, skipping...")
-            exceptionCount += 1
             pass
         else:
-            if int(r) > int(reader) or int(r) <= 0:
-                print("You can only input integers within the range from 1 - " + str(reader))
-                print("Skipping value...")
-                exceptionCount += 1
-                pass
+            pass
+    for x in listD:
+        print(str(x) + " is a duplicate value!")
+        pass
+    pass
+
+
+l = []
+n1 = input("Input array length: ")
+if not n1.isnumeric():
+    print("Invalid value...")
+    exit(-1)
+else:
+    exception = 0
+    print("Please type in the array's elements: ")
+    for p in range(0, int(n1) + 1):
+        n2 = input("")
+        if n2.isnumeric():
+            if 1 <= int(n2) <= int(n1):
+                l.append(int(n2))
             else:
-                ar.append(int(r))
-    print("Confirm array. Containing " + str(len(ar)) + " elements, skipping " +
-          str(exceptionCount) + " invalid values")
-print("Given array: " + str(ar))
-print("List of duplicate values: ")
-duplicateHandler(ar)
+                print("Invalid value, skipping...")
+                exception += 1
+                pass
+        else:
+            print("Invalid value, skipping...")
+            exception += 1
+            pass
+    print("Confirmed array with " + str(len(l)) + " elements")
+    print("Skipped " + str(exception) + "invalid values")
+    print("")
+    findDuplicate(l)
+    print("Array: " + str(l))
