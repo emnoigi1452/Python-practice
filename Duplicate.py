@@ -1,3 +1,8 @@
+# Viết 1 chương trình cho phép nhập vào số n (n >= 0)
+# Tạo một dãy số [array] với độ dài n+1 (với các số trong dãy nhập bởi người dùng)
+# In ra màn hình tất cả các số bị lặp trong dãy
+# Ghi chú : Các số nhập bởi người dùng là x (với điều kiện 1 <= x <= n), và không được chỉnh sửa dãy số (tức thêm hoặc xóa số nào đi)
+
 def checkDupe(num, array):
     b = False
     for k in array:
