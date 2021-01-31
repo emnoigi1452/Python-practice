@@ -30,7 +30,7 @@ if not e.isnumeric():
 else:
     pass
 
-getcount = 0
+getcount = 1
 
 displayList = plist(int(s), int(e))
 for k in displayList:
