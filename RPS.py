@@ -25,3 +25,5 @@ elif result == 2: print("Chetmemaydi con chó rách")
 else: print("Tạm hoà nhé! Lần sau bố mày sẽ thắng :'(")
 
 print("Bạn đã chọn: {} - Python đã chọn: {}".format(player, computer))
+print("Trò chơi sẽ khép lại sau 10 giây! Chụp gì thì chụp đi :v")
+time.sleep(10)
