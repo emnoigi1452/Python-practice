@@ -37,11 +37,11 @@ class Bookstore:
 				self.database.update({book: amount})
 				self.books.append(book)
 			else:
-				self.database.update({book: self.database[book]+amount})
+				self.database.update({book: self.database[book] + amount})
 	def browse(input):
 		matches = []
 		for book in self.books:
-			if book.name.count(input) > 1:
+			if (book.name.count(input) > 1) or (book.author.count(input) > 1):
 				matches.append(book)
 		for results in matches:
 			print("%s by %s - Price: $%d - Left in stock: %d" % (result.name, result.price, self.database[result]))
