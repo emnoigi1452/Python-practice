@@ -1,29 +1,25 @@
+import time
 import random
 
-player = input("Hãy chọn đi [Kéo, Búa, Bao]: ")
-computer = ["Kéo", "Bao", "Búa"][random.randint(0,2)]
-
-result = 0
-
-if player == "Kéo":
-	if player == computer: result = 0
-	elif computer == "Bao": result = 1
-	else: result = 2 
-elif player == "Búa":
-	if player == computer: result = 0
-	elif computer == "Kéo": result = 1
-	else: result = 2 
-elif player == "Bao":
-	if player == computer: result = 0
-	elif computer == "Búa": result = 1
-	else: result = 2 
+possibles = ["Kéo", "Búa", "Bao"]
+chart = [[2, 1, 0], [0, 2, 1], [1, 0, 2]]
+user = -1
+try:
+	raw = input("Hãy chọn đi (Kéo, Búa, Bao): ")
+	user = possibles.index(raw)
+except ValueError:
+	print("Chơi đàng hoàng hộ tí :/ Chọn Kéo, Búa, Hoặc Bao thôi!")
+computer = random.randint(0,2)
+status = chart[user].index(computer)
+if status == 0:
+	print("\nBạn đã thắng! Máy tính chọn: %s - Bạn chọn: %s" % (possibles[computer], possibles[user]))
+	print("Python: Ăn may thôi :( Im đê")
+elif status == 1:
+	print("\nBạn đã thua rồi! Máy tính chọn: %s - Bạn chọn %s" % (possibles[computer], possibles[user]))
+	print("Python: ohshitbanthuaroi, tiếc thật nhỉ :))")
 else:
-	print("Thưa bạn ơi, {} là cái đéo gì thế?".format(player))
-
-if result == 1: print("Ơ kìa, sao mình lại thua :(( Nhường m đấy")
-elif result == 2: print("Chetmemaydi con chó rách")
-else: print("Tạm hoà nhé! Lần sau bố mày sẽ thắng :'(")
-
-print("Bạn đã chọn: {} - Python đã chọn: {}".format(player, computer))
-print("Trò chơi sẽ khép lại sau 10 giây! Chụp gì thì chụp đi :v")
+	print("\nHòa! Cả hai bên chọn %s" % (possibles[computer]))
+	print("Python: -.-")
+pass
+print("\nTrò chơi sẽ kết thúc sau 10s!")
 time.sleep(10)
