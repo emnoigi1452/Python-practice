@@ -44,7 +44,7 @@ class Bookstore:
 			if (book.name.count(input) > 1) or (book.author.count(input) > 1):
 				matches.append(book)
 		for results in matches:
-			print("%s by %s - Price: $%d - Left in stock: %d" % (result.name, result.price, self.database[result]))
+			print("%s by %s - Price: $%d - Left in stock: %d" % (result.name, result.author, result.price, self.database[result]))
 	def checkout(buyer, cart):
 		total_price = 0
 		for item in cart.keys():
