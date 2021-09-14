@@ -10,7 +10,7 @@ class Customer:
 	def __init__(self, name, balance):
 		self.name = name
 		self.balance = balance
-		self.cart = {}
+		self.cart = dict({})
 		self.cart_value = 0
 	def set_bal(value):
 		self.balance = value
@@ -27,8 +27,8 @@ class Bookstore:
 	def __init__(self, capacity):
 		self.capacity = capacity
 		self count = 0
-		self.books = []
-		self.database = {}
+		self.books = list([])
+		self.database = dict({})
 	def add_books(book, amount):
 		if count + amount > capacity:
 			print("We can't add these books, the storage is full!")
