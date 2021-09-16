@@ -42,3 +42,4 @@ time.sleep(5)
 print("Begin")
 pyautogui.press('enter')
 test.play_the_game()
+pass
