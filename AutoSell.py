@@ -33,7 +33,7 @@ for values in selling:
    status.update({values: True})
 else:
    print("Keys initialized")
-afk_time = (storage_size/500000) * (60*(25-fortune)) # random formula xd
+afk_time = (storage_size/500000) * (60*(35-fortune)) # random formula xd
 
 print("Time to start, you have 10 seconds to enter the client in FullScreen")
 time.sleep(10)
