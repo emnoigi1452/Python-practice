@@ -1,4 +1,3 @@
-limits = lambda layer: 2*(layer**2)
 sublimits = dict({'s': 2, 'p': 6, 'd': 10, 'f': 14})
 scripts = '¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ¹⁰ ¹¹ ¹² ¹³ ¹⁴'.split(' ')
 print('Ghi chú: Hãy nhấn -1 nếu bạn không muốn tiếp tục!')
