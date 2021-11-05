@@ -12,7 +12,7 @@ else:
     text = input("Nhập vào xâu kí tự: ").lower()
     # Validates string, check if string has invalid characters
     for i in text:
-        if(i == ' ') continue
+        if(i == ' '): continue
         if(alphabet.count(i) == 0):
             print("Dãy chữ có chứa kí tự không hợp lệ!")
             exit()
