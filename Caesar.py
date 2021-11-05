@@ -12,6 +12,7 @@ else:
     text = input("Nhập vào xâu kí tự: ").lower()
     # Validates string, check if string has invalid characters
     for i in text:
+        if(i == ' ') continue
         if(alphabet.count(i) == 0):
             print("Dãy chữ có chứa kí tự không hợp lệ!")
             exit()
@@ -30,6 +31,7 @@ else:
     # Encode / Decode the character
     process = '';
     for c in text:
+        if(c == ' ') continue
         revert = ''
         # What the hell did I do here? I have no idea
         if(mode == 'decode'):
