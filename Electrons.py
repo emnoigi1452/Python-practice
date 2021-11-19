@@ -25,7 +25,6 @@ while True:
        else:
            print('   %s: %d' % (shell_name, shell_count))
            shells += 1; outter = shell_count
-
    print("Số lớp electron = %d" % (shells,))
    print("Số electron lớp ngoài cùng = %d" % (outter,))
    print("--------------------------------------")
