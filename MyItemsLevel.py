@@ -60,13 +60,13 @@ while True:
                 stats_map.update({i+1: str(round(base, 2)) + " - " + str(round(float(base*scale), 2))})
             else:
                 stats_map.update({i+1: str(round(base, 2))})
-        print('.................................................')
+        print('------------------------------------------------')
         time.sleep(1)
         display = input('  - Nhập chế độ hiển thị kết quả tính toán: ');
-        print('.................................................')
+        print('------------------------------------------------')
         if (display.lower() == 'a') or (display.lower() == 'f'):
             start = display.lower() == 'a' and 1 or level
-            print('  - Đang hiển thị tất cả chỉ số từ level %d-30...' % (start))
+            print('  - Đang hiển thị tất cả chỉ số từ level %d-30...' % (start)); print('')
             time.sleep(1.5)
             for keys in range(start, 31):
                 print('  [+] Cấp %d: %s' % (keys, stats_map[keys]))
