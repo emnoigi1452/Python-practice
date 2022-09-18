@@ -30,7 +30,12 @@ class FakeNode:
       repstr = mix(x) + mix(y)
       x = int(repstr[:7],2)
       y = random.randint(1, x)
-    return commands[int(math.sqrt(x*y)) % n]
+    prod = int(math.sqrt(x*y)) % n
+    if prod < 0:
+      prod = prod * (-1)
+    if prod >= n:
+      prod = prod % n
+    return commands[prod]
   
   # Check if a random command should be executed
   @staticmethod
@@ -61,7 +66,7 @@ class AutoHandle:
   def gamble_execution(self, id):
     func = lambda: random.randint(self.gamble[0], self.gamble[1])
     a, b = func(), func()
-    bet = int(math.sqrt(a, b)) * 100
+    bet = int(math.sqrt(a*b)) * 100
     BOT.write(id.replace('#a', str(bet))); BOT.press('enter')
     CLOCK.sleep(FakeNode.gen_delay(self.commands[id], 2, 6))
   
@@ -70,9 +75,9 @@ class AutoHandle:
     for i in range(self.loops):
       try:
         # Function
-        print("Starting loop #%d" % (i+1), end="\r")
+        print("Starting loop #%d in process..." % (i+1)); cm = None
         if FakeNode.check():
-          cm = FakeNode.gen_command(self.commands.keys(), 16)
+          cm = FakeNode.gen_command(list(self.commands.keys()), 16)
           if cm.count("#a") > 0:
             self.gamble_execution(cm)
           else:
@@ -80,10 +85,12 @@ class AutoHandle:
           # Pretending to wait for random command output
           _d_ = FakeNode.gen_delay(2,1,5)
           CLOCK.sleep(_d_)
+        print("Chosen command: %s" % (cm,))
         BOT.write('sh', interval=0.12); BOT.press('enter')
         CLOCK.sleep(FakeNode.gen_delay(1,1,9))
         BOT.write('sb', interval=0.15); BOT.press('enter')
         CLOCK.sleep(FakeNode.gen_delay(15,9,9))
+        print("-----------------------------")
       except:
         # Handle external script pausing
         pause = input("Pause requested! Do you wish to continue?: ")
@@ -92,6 +99,10 @@ class AutoHandle:
         else:
           print("Returning to loop...")
           CLOCK.sleep(FakeNode.gen_delay(1,1,6))
+      '''
+      finally:
+        print("meh")
+      '''
         
 
 if __name__ == '__main__':
