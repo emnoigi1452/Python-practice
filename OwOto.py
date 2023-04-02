@@ -267,7 +267,7 @@ class AutoHandle:
           # Pretending to wait for random command output
           _d_ = FakeNode.gen_delay(2,1,5)
           CLOCK.sleep(_d_)
-        print((Locale[LANG])['cmd-info'])
+        print(((Locale[LANG])['cmd-info']).format(cm))
         print("-----------------------------")
         BOT.write('sh', interval=0.12); BOT.press('enter')
         CLOCK.sleep(FakeNode.gen_delay(1,1,9))
